@@ -11,12 +11,14 @@ class HomeUserCubit extends Cubit<HomeUserState> {
 
   Future<void> getUsers(String searchName, String? endCursor) async {
     emit(HomeUserLoading());
-    var results = await _homeDataSource.getUsers(searchName, null);
+    var results = await _homeDataSource.getUsers(searchName, endCursor);
+
+    await Future.delayed(const Duration(seconds: 2));
 
     results.fold((error) {
       emit(HomeUserFailed(error));
     }, (model) {
-      emit(HomeUserSuccess(model.searchResults));
+      emit(HomeUserSuccess(userInfo: model));
     });
   }
 }

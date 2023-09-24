@@ -7,9 +7,9 @@ final class HomeUserInitial extends HomeUserState {}
 final class HomeUserLoading extends HomeUserState {}
 
 final class HomeUserSuccess extends HomeUserState {
-  final List<UserSearchModel> userList;
+  final UserSearchResponseDataModel userInfo;
 
-  HomeUserSuccess(this.userList);
+  HomeUserSuccess({required this.userInfo});
 }
 
 final class HomeUserFailed extends HomeUserState {

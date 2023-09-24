@@ -29,9 +29,9 @@ class UserSearchResponseDataModel {
 }
 
 class UserSearchModel {
-  String? bio;
+  String bio;
   String id;
-  String? name;
+  String name;
   String avatarUrl;
 
   UserSearchModel({
@@ -43,15 +43,15 @@ class UserSearchModel {
 
   factory UserSearchModel.fromJson(Map<String, dynamic> json) =>
       UserSearchModel(
-        bio: json["bio"],
-        id: json["id"],
-        name: json["name"],
-        avatarUrl: json["avatarUrl"],
+        bio: json["bio"] ?? '',
+        id: json["id"] ?? '',
+        name: json["name"] ?? '',
+        avatarUrl: json["avatarUrl"] ?? '',
       );
 }
 
 class PageInfo {
-  String? endCursor;
+  String endCursor;
   bool hasNextPage;
 
   PageInfo({
@@ -60,7 +60,7 @@ class PageInfo {
   });
 
   factory PageInfo.fromJson(Map<String, dynamic> json) => PageInfo(
-        endCursor: json["endCursor"],
-        hasNextPage: json["hasNextPage"],
+        endCursor: json["endCursor"] ?? '',
+        hasNextPage: json["hasNextPage"] ?? '',
       );
 }

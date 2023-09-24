@@ -3,7 +3,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:graphql_token/core/utils/consts.dart';
 
 class GraphService {
-  static const _token = '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';
+  static const _token = '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';
   String get token => _token;
 
   static final GraphService _instance = GraphService._();
